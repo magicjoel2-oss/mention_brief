@@ -1,0 +1,149 @@
+{
+  "date": "2026-05-14",
+  "generatedAt": "2026-06-12T02:37:14.661Z",
+  "windowFrom": null,
+  "windowTo": null,
+  "items": [
+    {
+      "id": "20260514-01",
+      "time": "2026-05-14 00:37",
+      "chat": "스킬젬 협업방",
+      "author": "반호현 [ricebahn]",
+      "priority": "high",
+      "isCC": false,
+      "original": "전에 승학님이 스킬젬 등급별 판매가격 바꾸자고 하셨었는데 요것도 확인해주심 좋을것 같습니다~ 이승학2 [shibon] 이민우3 [magicjoel]",
+      "summary": "스킬젬 등급별 판매가격 변경 건 확인 요청. shibon 님이 이전에 제기한 사안의 후속.",
+      "recommend": "어젯밤 늦게 들어온 건이라 오늘 첫 확인일 가능성. shibon 님께 원래 의도를 먼저 확인 후 가격표 초안을 회신하는 흐름이 깔끔.",
+      "links": []
+    },
+    {
+      "id": "20260513-10",
+      "time": "2026-05-13 15:42",
+      "chat": "보상 협의방",
+      "author": "이승학2 [shibon]",
+      "priority": "medium",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 임미령 [miryeongim] / Next 왕조의 무덤 - 보상 밸런스 / 왕조의 무덤 보상 변경 필요한 것들 기존에 종원님이 정리하셨던 문서에 수정했습니다.",
+      "summary": "왕조의 무덤 보상 밸런스 문서를 shibon 님이 수정. 임미령 님과 함께 리뷰 요청.",
+      "recommend": "임미령 님과 분담 가능 — 누가 어느 섹션 볼지 미리 정리하면 중복 리뷰 방지. SNF 도메인이라 변경 영향 큼.",
+      "links": [
+        {
+          "label": "Confluence: Next 왕조의 무덤 보상 밸런스",
+          "url": "https://confluence.nexon.com/pages/viewpage.action?pageId=2769938463"
+        }
+      ]
+    },
+    {
+      "id": "20260513-09",
+      "time": "2026-05-13 14:39",
+      "chat": "환영열쇠 Cuid방",
+      "author": "정주영 [freeplay]",
+      "priority": "info",
+      "isCC": false,
+      "original": "(테이블) PhantomKey / PhantomKey_Paid / PhantomKey_Free / Old_PhantomKey / Old_PhantomKey_Paid / Old_PhantomKey_Free / Bloody_PhantomKey …",
+      "summary": "환영열쇠 Cuid 후보 테이블 공유. 10:52·11:29 요청에 대한 freeplay 님의 사전 자료.",
+      "recommend": "응답 필요 항목 2건과 동일 스레드 — 한 번 답할 때 함께 처리. 본인이 사용 중인 Cuid + _Free 제외 버전을 표 위에 매핑해서 회신하면 깔끔.",
+      "links": []
+    },
+    {
+      "id": "20260513-08",
+      "time": "2026-05-13 11:29",
+      "chat": "환영열쇠 Cuid방",
+      "author": "정주영 [freeplay]",
+      "priority": "high",
+      "isCC": false,
+      "original": "다이아, 루비 제외하고는 연결 끊고 서버 잘 뜹니다. 이민우3 [magicjoel] 요 3개 _Free 없는 Cuid로 바꿔주실 수 있을까요?",
+      "summary": "다이아·루비 외 3개 아이템의 Cuid를 _Free 없는 버전으로 교체 요청.",
+      "recommend": "위 14:39 테이블을 근거로 어떤 Cuid가 _Free 없는 버전인지 매핑 가능. 응답 우선순위 최상.",
+      "links": []
+    },
+    {
+      "id": "20260513-07",
+      "time": "2026-05-13 10:52",
+      "chat": "환영열쇠 Cuid방",
+      "author": "정주영 [freeplay]",
+      "priority": "high",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 환영열쇠 현재 사용중인 Cuid좀 공유 부탁드립니다.",
+      "summary": "환영열쇠 현재 사용 중인 Cuid 공유 요청.",
+      "recommend": "11:29 요청의 사전 단계. 두 요청을 한 메시지로 묶어서 응답하면 freeplay 님도 대기 시간 줄어듦.",
+      "links": []
+    },
+    {
+      "id": "20260513-06",
+      "time": "2026-05-13 09:13",
+      "chat": "스킬젬 협업방",
+      "author": "이승학2 [shibon]",
+      "priority": "info",
+      "isCC": false,
+      "original": "정우식 [gameseeke] 이민우3 [magicjoel] 반호현 [ricebahn] / 이제 자기 클래스에 맞게, 그리고 베리에이션 적용되어서 사냥터에서 스킬젬 드랍되는 작업 서밋했습니다. (이제 스킬젬 제작 데이터 작업 들어갑니다)",
+      "summary": "스킬젬 드랍 작업 서밋 완료. 다음 단계는 제작 데이터 작업.",
+      "recommend": "FYI 성격. 다만 05-14 00:37 가격 건과 같은 시스템이라 함께 컨텍스트 정리해두면 후속 논의 빨라짐.",
+      "links": []
+    },
+    {
+      "id": "20260513-05",
+      "time": "2026-05-13 08:57",
+      "chat": "보상 협의방",
+      "author": "윤주희 [juhi282]",
+      "priority": "info",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 검수 완료되었습니다. / Next 레이드 보상 정보_가문 경험치",
+      "summary": "레이드 보상(가문 경험치) 문서 검수 완료.",
+      "recommend": "완료 통보 — 응답 불필요. Notion 트래커에 해당 ER 티켓이 있다면 상태 동기화 고려.",
+      "links": [
+        {
+          "label": "Confluence: Next 레이드 보상 정보_가문 경험치",
+          "url": "https://confluence.nexon.com/pages/viewpage.action?pageId=2819271623"
+        }
+      ]
+    },
+    {
+      "id": "20260513-04",
+      "time": "2026-05-13 07:37",
+      "chat": "보상 협의방",
+      "author": "윤주희 [juhi282]",
+      "priority": "medium",
+      "isCC": true,
+      "original": "이승학2 [shibon] 챌린지 미션이 누적 보상 타입으로 변경되면서 보상 내용이 일부 변경되었습니다. 누적 보상 내용도 추가되었고요. 검토 부탁드립니다.",
+      "summary": "챌린지 미션 보상이 누적 타입으로 변경 + 누적 보상 추가. 1차 멘션은 shibon.",
+      "recommend": "본인이 직접 답할 의무는 약함(shibon이 1차). 다만 SNF 보상 흐름 전체를 보는 입장이라 변경 내용은 인지해두면 좋음.",
+      "links": [
+        {
+          "label": "Confluence: Next 콘텐츠 이용안내",
+          "url": "https://confluence.nexon.com/pages/viewpage.action?pageId=2840359860"
+        }
+      ]
+    },
+    {
+      "id": "20260513-03",
+      "time": "2026-05-13 05:46",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "info",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 자막을 제외한 인게임 클래스 소개 영상 작업 완료되어 공유드립니다.",
+      "summary": "클래스 소개 영상 작업본(자막 제외) 공유.",
+      "recommend": "05:17 정우식 님의 '영상 넘겨주시면 좋을듯' 요청에 대한 사실상의 답. 정우식 님 채팅방으로 이 영상 전달하면 두 건 동시 해결.",
+      "links": []
+    },
+    {
+      "id": "20260513-02",
+      "time": "2026-05-13 05:17",
+      "chat": "영상 전달방",
+      "author": "정우식 [gameseeke]",
+      "priority": "high",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] / 영상을 넘겨주시면 좋을듯?",
+      "summary": "영상 전달 요청. 어떤 영상인지는 직전 맥락 필요.",
+      "recommend": "위 05:46 김찬래 님 영상이 매칭될 가능성 높음. 매칭 맞다면 바로 포워딩, 아니라면 어떤 영상인지 한 줄 확인.",
+      "links": []
+    }
+  ],
+  "stats": {
+    "total": 10,
+    "high": 4,
+    "medium": 2,
+    "cc": 1
+  }
+}

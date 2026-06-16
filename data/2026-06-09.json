@@ -1,0 +1,91 @@
+{
+  "date": "2026-06-09",
+  "generatedAt": "2026-06-12T02:37:14.661Z",
+  "windowFrom": null,
+  "windowTo": null,
+  "items": [
+    {
+      "id": "20260609-01",
+      "time": "2026-06-09 05:13",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "high",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 어제 말씀하신대로 수정해 보았습니다. 노출이 많은 옷만 골라 특정 부위가 부각되게 줌하였고, 약간의 슬로우를 주어 천천히 보여주는 식으로 편집하였습니다.",
+      "summary": "본인 지시 반영한 영상 수정본 — 코스튬/노출 강조 컷 처리.",
+      "recommend": "검토 후 회신 필요. 본인 지시의 직접 후속이라 응답 빠를수록 흐름 빠름.",
+      "links": []
+    },
+    {
+      "id": "20260609-02",
+      "time": "2026-06-09 02:42",
+      "chat": "기획 협업방",
+      "author": "정우식 [gameseeke]",
+      "priority": "high",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 민우님! / 'Next 보스 몬스터 인지성 강화 기획' / 위 기획 3.1만 들어간게 맞죠? / 개발없고 리소스만 들어간게 맞는지요? / cc. 구민준 [Prevhack12]",
+      "summary": "보스 인지성 강화 기획 문서 관련 두 가지 사실 확인: ① 3.1 섹션만 적용? ② 개발 없이 리소스만?",
+      "recommend": "응답 필요. Confluence 3.1 섹션 + Jira 작업 이력 확인 후 가/부 회신. 1분이면 답 가능.",
+      "links": [
+        {
+          "label": "Confluence: Next 보스 몬스터 인지성 강화 기획",
+          "url": "https://confluence.nexon.com/spaces/NGR/pages/2662163244"
+        }
+      ]
+    },
+    {
+      "id": "20260608-04",
+      "time": "2026-06-08 09:37",
+      "chat": "그룹 채팅 e6a7…",
+      "author": "이승학2 [shibon]",
+      "priority": "info",
+      "isCC": false,
+      "original": "요거였네요. HouseConfig 파일 아래 House 시트에 있습니다. 이민우3 [magicjoel] / GatheringSiteAutoRewardProvideResetCooltime_Sec / 600 / 등록된 채집장에서 자동으로 자원 획득 후 다시 지급될 때 까지의 대기 시간 — n초 마다 등록된 채집 포인트의 자동 채집 보상을 지급한다",
+      "summary": "채집장 자동 보상 쿨타임(600초) 데이터 위치 확정 — HouseConfig.xlsx > House 시트.",
+      "recommend": "정보 인지 완료. 채집 메일 시간 버그 분석에 직접 사용. 후속 액션은 본인 영역.",
+      "links": []
+    },
+    {
+      "id": "20260608-03",
+      "time": "2026-06-08 09:35",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "info",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 마지막에 화면을 향해 뛰어오는 씬 추가했습니다!",
+      "summary": "어제 영상 수정 진행 (씬 추가). 06-09 05:13의 직전 단계.",
+      "recommend": "06-09 최신본에서 함께 검토. 별도 응답 불필요.",
+      "links": []
+    },
+    {
+      "id": "20260608-02",
+      "time": "2026-06-08 09:33",
+      "chat": "그룹 채팅 e6a7…",
+      "author": "이승학2 [shibon]",
+      "priority": "info",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] config 파일이 아니네요. GatheringSiteTable에 있어요",
+      "summary": "위 09:37 답변의 1차 정정 메시지 — config가 아니라 GatheringSiteTable.",
+      "recommend": "09:37이 최종 정확한 위치 → 이건 인지만.",
+      "links": []
+    },
+    {
+      "id": "20260608-01",
+      "time": "2026-06-08 08:23",
+      "chat": "그룹 채팅 e6a7…",
+      "author": "김상훈2 [tinarusef]",
+      "priority": "high",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 민우님 따봉 보고 서밋가도 되는거에여?",
+      "summary": "본인 승인(따봉) 후 서밋 가능한지 확인 요청.",
+      "recommend": "응답 필요. 직접 결재 요청이라 응답 지연 시 작업 블로킹. 무엇을 서밋하는지 채팅방 직전 컨텍스트(번역 복구 후속 가능성) 확인 후 가/부 회신.",
+      "links": []
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "high": 3,
+    "medium": 0,
+    "cc": 0
+  }
+}

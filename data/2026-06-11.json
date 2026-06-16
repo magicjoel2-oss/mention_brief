@@ -1,0 +1,113 @@
+{
+  "date": "2026-06-11",
+  "generatedAt": "2026-06-12T02:37:14.661Z",
+  "windowFrom": null,
+  "windowTo": null,
+  "items": [
+    {
+      "id": "20260611-01",
+      "time": "2026-06-11 01:00",
+      "chat": "가문 시스템 / 팀 그룹",
+      "author": "윤주희 [juhi282]",
+      "priority": "medium",
+      "isCC": false,
+      "original": "미열이 좀 있고 컨디션이 안좋아 연차 좀 사용하겠습니다 / 이민우3 [magicjoel]",
+      "summary": "본인 팀원 윤주희 연차 신청.",
+      "recommend": "팀 운영 영향. juhi282 님은 본인 8인 팀원. 진행 중인 작업(챌린지/레이드 보상 검수 등) 영향 점검 + 휴식 잘 하시라 한 줄 회신.",
+      "links": []
+    },
+    {
+      "id": "20260610-07",
+      "time": "2026-06-10 07:43",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "high",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 피드백 반영해서 영상 수정했습니다! 코스튬 정보 UI는 0.5초로 넣었는데 너무 빠르게 지나가는 것 같네요;;",
+      "summary": "코스튬 영상 수정본 + 김찬래 본인 의견 — UI 노출 0.5초가 너무 짧다고 느낌.",
+      "recommend": "의견 요청에 응답 필요. '0.5초로 둘지 / 좀 더 길게 할지' 의사결정. 흐름이 살아 있을 때 답하면 빠르게 닫힘.",
+      "links": []
+    },
+    {
+      "id": "20260610-06",
+      "time": "2026-06-10 05:21",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "info",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / Next 쇼츠 영상 (8) - 코스튬으로 섹시해지는 전투",
+      "summary": "쇼츠 영상 #8 (코스튬 섹시 전투) 기획 문서 공유 — 위 07:43 수정본의 기준 문서.",
+      "recommend": "위 07:43 의사결정의 컨텍스트 — 함께 검토. 별도 응답 불필요.",
+      "links": [
+        {
+          "label": "Confluence: Next 쇼츠 영상 (8) - 코스튬으로 섹시해지는 전투",
+          "url": "https://confluence.nexon.com/spaces/NGR/pages/2916593870"
+        }
+      ]
+    },
+    {
+      "id": "20260610-05",
+      "time": "2026-06-10 05:00",
+      "chat": "가문 시스템 / 팀 그룹",
+      "author": "신두하 [shin1234]",
+      "priority": "info",
+      "isCC": false,
+      "original": "Confluence: 작성 중 기획 - 가문 생산 콘텐츠 아이데이션 문서 (이후 잘림)",
+      "summary": "가문 생산 콘텐츠 아이데이션 문서 공유 (작성 중 상태).",
+      "recommend": "본문 잘려서 정확한 요청 의도 불명 — 단순 참고용 공유일 가능성.",
+      "links": [
+        {
+          "label": "Confluence: 가문 생산 콘텐츠 아이데이션",
+          "url": "https://confluence.nexon.com/spaces/NGR/pages/2152903248"
+        }
+      ]
+    },
+    {
+      "id": "20260610-04",
+      "time": "2026-06-10 02:55",
+      "chat": "SNF 빌드/QA 그룹",
+      "author": "신효선 [aweseon]",
+      "priority": "info",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 정우식 [gameseeke] 강민정2 [mjhue] 박민지 [minjeepark] 고명우 [kodengi] / GS Console 화이트리스트 페이지에 스팀키가 입력되어 있습니다. 인원 별로 해당하는 스팀코드를 스팀런처 좌측 하…",
+      "summary": "5명 멘션 — 스팀키 안내 + 스팀런처 사용 방법 안내. SNF/GS Console 테스트 관련 추정.",
+      "recommend": "단순 인지 — 본인 스팀키 확인 + 런처 등록.",
+      "links": [
+        {
+          "label": "Notion: GS Console 화이트리스트",
+          "url": "https://app.notion.com/p/nexoncompany/SNF-GS-console-TOY-37adadb56b2f80e39858c383a66b3efb"
+        }
+      ]
+    },
+    {
+      "id": "20260610-03",
+      "time": "2026-06-10 02:58",
+      "chat": "왕조의 무덤 협의방",
+      "author": "정우식 [gameseeke]",
+      "priority": "info",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] / [Teams 링크 → 신효선 02:55 메시지] (이후 잘림)",
+      "summary": "위 신효선 메시지를 다른 채팅방으로 포워딩 / 인용.",
+      "recommend": "동일 정보 — 컨텍스트만 다른 그룹에 전달된 것. 별도 액션 불필요.",
+      "links": []
+    },
+    {
+      "id": "20260610-02",
+      "time": "2026-06-10 08:40",
+      "chat": "박헌영 1:1",
+      "author": "박헌영 [Nazrael]",
+      "priority": "casual",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 곱창 드실래요",
+      "summary": "사적 점심/저녁 제안.",
+      "recommend": "비업무 — 본인 판단.",
+      "links": []
+    }
+  ],
+  "stats": {
+    "total": 7,
+    "high": 1,
+    "medium": 1,
+    "cc": 0
+  }
+}

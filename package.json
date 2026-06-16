@@ -1,0 +1,23 @@
+{
+  "name": "mention-brief-automation",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Local automation for Teams mention digest -> data/*.json -> git commit",
+  "scripts": {
+    "setup-browser": "node scripts/setup-browser.mjs",
+    "poc-d": "node scripts/auth-poc-d.mjs",
+    "poc-d2": "node scripts/auth-poc-d2.mjs",
+    "poc-d3": "node scripts/auth-poc-d3.mjs",
+    "poc-d4": "node scripts/auth-poc-d4.mjs",
+    "poc-d5": "node scripts/auth-poc-d5.mjs",
+    "fetch": "node scripts/fetch-mentions.mjs",
+    "digest": "node scripts/generate-digest.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-12T02:37:14.661Z",
+  "retentionDays": 14,
+  "dates": [
+    {
+      "date": "2026-06-12",
+      "itemCount": 8,
+      "highCount": 1,
+      "mediumCount": 2,
+      "ccCount": 2
+    },
+    {
+      "date": "2026-06-11",
+      "itemCount": 7,
+      "highCount": 1,
+      "mediumCount": 1,
+      "ccCount": 0
+    },
+    {
+      "date": "2026-06-09",
+      "itemCount": 6,
+      "highCount": 3,
+      "mediumCount": 0,
+      "ccCount": 0
+    },
+    {
+      "date": "2026-05-27",
+      "itemCount": 8,
+      "highCount": 2,
+      "mediumCount": 0,
+      "ccCount": 4
+    },
+    {
+      "date": "2026-05-26",
+      "itemCount": 8,
+      "highCount": 4,
+      "mediumCount": 1,
+      "ccCount": 0
+    },
+    {
+      "date": "2026-05-22",
+      "itemCount": 11,
+      "highCount": 6,
+      "mediumCount": 2,
+      "ccCount": 2
+    },
+    {
+      "date": "2026-05-14",
+      "itemCount": 10,
+      "highCount": 4,
+      "mediumCount": 2,
+      "ccCount": 1
+    }
+  ]
+}

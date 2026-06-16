@@ -1,0 +1,120 @@
+{
+  "date": "2026-06-12",
+  "generatedAt": "2026-06-12T02:37:14.661Z",
+  "windowFrom": null,
+  "windowTo": null,
+  "items": [
+    {
+      "id": "20260611-09",
+      "time": "2026-06-11 08:32",
+      "chat": "쇼츠 작업방",
+      "author": "김찬래 [crkim]",
+      "priority": "low",
+      "isCC": true,
+      "original": "김경환2 [naturekim] 김태경4 [ktk0627] 정다솜 [dasomi] / 안녕하세요. NEXT 8번째 쇼츠 영상 완성되어 공유드립니다. / cc. 임효상 [wizd] 이민우3 [magicjoel] / 📎 쇼츠_강화.mp4",
+      "summary": "쇼츠 #8 (장비 강화) 최종 완성본 공유. 본인은 cc. 이미 👍 2개 반응.",
+      "recommend": "cc — 의무 응답 아님. 06-10 05:21 공유됐던 쇼츠 #8 기획 문서의 결과물. 본인이 이미 따봉 눌렀는지 확인.",
+      "links": [
+        {
+          "label": "Confluence: Next 쇼츠 영상 (8) - 장비 강화",
+          "url": "https://confluence.nexon.com/spaces/NGR/pages/2835857869"
+        }
+      ]
+    },
+    {
+      "id": "20260611-08",
+      "time": "2026-06-11 08:02",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "high",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 줄일 수 있는데까지는 줄인 것 같은데 23초입니다. 확인 부탁드립니다.",
+      "summary": "영상 길이를 23초까지 단축 — 본인 확인 요청.",
+      "recommend": "응답 필요. 검토 후 OK 회신. 영상 협업방 흐름의 최신 상태.",
+      "links": []
+    },
+    {
+      "id": "20260611-07",
+      "time": "2026-06-11 07:22",
+      "chat": "영상 협업방",
+      "author": "김찬래 [crkim]",
+      "priority": "info",
+      "isCC": false,
+      "original": "임효상 [wizd] 이민우3 [magicjoel] / 위에 말씀드린 순서로 영상 촬영해 보았습니다. 현재 20초 분량이 되었는데 느낌 보시고 괜찮으면 시간은 어떻게든 좀 더 줄여보겠습니다.",
+      "summary": "영상 1차 촬영본(20초). 추가 단축 의향 표명.",
+      "recommend": "위 08:02이 후속 — 별도 응답 불필요.",
+      "links": []
+    },
+    {
+      "id": "20260611-06",
+      "time": "2026-06-11 06:43",
+      "chat": "그룹 채팅 9babed41…",
+      "author": "정우식 [gameseeke]",
+      "priority": "casual",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 내일 이른퇴근 어떠심",
+      "summary": "내일 이른퇴근 제안.",
+      "recommend": "비업무. 본인 일정 판단 후 응답.",
+      "links": []
+    },
+    {
+      "id": "20260611-05",
+      "time": "2026-06-11 05:29",
+      "chat": "SNF→Dev 협의방 (장혁)",
+      "author": "장혁 [hyuck]",
+      "priority": "medium",
+      "isCC": false,
+      "original": "이민우3 [magicjoel]님 안녕하세요! / 기획공유 메일 확인하였고, 동일 작업이므로 8차 채팅방 제목 변경해서 사용해도 무방할것 같아 멘션 드립니다! / 다만 SNF → Dev 로의 작업은 클라 쪽에서 작업 진행 전 내부 검토 필요한 부분이 있어 논의 진행 중이고 / 차주 중에 논의 끝내고 얘기주신다던 상석님 말씀이 있으셨어서, 이 점 참고 부탁드립니다",
+      "summary": "8차 채팅방을 그대로 재사용해도 OK + SNF→Dev 이관 작업 클라 측 내부 검토 중, 차주 상석님 회신 대기.",
+      "recommend": "정보성 + 인지 필요. 05-22 신효선 SNF 일감 마감 흐름의 후속 단계. 차주 상석님 회신 알람 걸어두기.",
+      "links": []
+    },
+    {
+      "id": "20260611-04",
+      "time": "2026-06-11 04:58",
+      "chat": "왕조의 무덤 협의방",
+      "author": "정우식 [gameseeke]",
+      "priority": "medium",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] / 벨라랑 그냥 싸우다 죽어보실래요?",
+      "summary": "벨라와 전투 후 사망 시연 제안 (촬영용 추정).",
+      "recommend": "응답 필요 (가벼움). 채팅방 직전 컨텍스트 확인 — 어떤 영상 촬영용인지 매핑.",
+      "links": []
+    },
+    {
+      "id": "20260611-03",
+      "time": "2026-06-11 04:56",
+      "chat": "왕조의 무덤 협의방",
+      "author": "김수윤 [kimsuyoon]",
+      "priority": "info",
+      "isCC": false,
+      "original": "이민우3 [magicjoel] 일단 은복님께 제보드렸습니다",
+      "summary": "어떤 이슈를 이은복 님께 제보. 컨텍스트 부족.",
+      "recommend": "참고 — 채팅방 직전 컨텍스트(어떤 이슈) 확인 권장.",
+      "links": []
+    },
+    {
+      "id": "20260611-02",
+      "time": "2026-06-11 04:22",
+      "chat": "쇼츠 작업방",
+      "author": "김찬래 [crkim]",
+      "priority": "low",
+      "isCC": true,
+      "original": "김경환2 [naturekim] 김태경4 [ktk0627] 정다솜 [dasomi] / Next 쇼츠 영상 (7) - Get stronger, get hotter",
+      "summary": "쇼츠 #7 (Get stronger, get hotter = 코스튬 영상) 공유 — 멘션 대상은 마케팅팀, 본인 cc 추정.",
+      "recommend": "06-10 07:43 코스튬 영상 흐름이 쇼츠 #7으로 정착. cc 인지 OK.",
+      "links": [
+        {
+          "label": "Confluence: Next 쇼츠 영상 (7) - Get stronger, get hotter",
+          "url": "https://confluence.nexon.com/spaces/NGR/pages/2835857607"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "total": 8,
+    "high": 1,
+    "medium": 2,
+    "cc": 2
+  }
+}
