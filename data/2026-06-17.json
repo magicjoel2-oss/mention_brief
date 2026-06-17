@@ -1,8 +1,8 @@
 {
   "date": "2026-06-17",
-  "generatedAt": "2026-06-17T14:33:17+09:00",
-  "windowFrom": "2026-06-16T14:33:17+09:00",
-  "windowTo": "2026-06-17T14:33:17+09:00",
+  "generatedAt": "2026-06-17T14:45:05+09:00",
+  "windowFrom": "2026-06-16T14:45:05+09:00",
+  "windowTo": "2026-06-17T14:45:05+09:00",
   "items": [
     {
       "id": "20260617-01",
@@ -23,7 +23,7 @@
       "time": "2026-06-16 18:19",
       "chat": "왕조의 무덤 협의방",
       "author": "정우식 [gameseeke]",
-      "priority": "high",
+      "priority": "casual",
       "isCC": false,
       "original": "이민우3 [magicjoel] 밥 ㄱ?",
       "summary": "이민우3 [magicjoel] 밥 ㄱ?",
@@ -31,25 +31,11 @@
       "links": [],
       "messageId": "1781601566115",
       "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
-    },
-    {
-      "id": "20260617-03",
-      "time": "2026-06-16 14:35",
-      "chat": "왕조의 무덤 협의방",
-      "author": "정우식 [gameseeke]",
-      "priority": "high",
-      "isCC": false,
-      "original": "이민우3 [magicjoel] 제전 지금 켜져있는거 방랑하는 고룡 주는거밖에 없는거죠?",
-      "summary": "이민우3 [magicjoel] 제전 지금 켜져있는거 방랑하는 고룡 주는거밖에 없는거죠?",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781588123794",
-      "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
     }
   ],
   "stats": {
-    "total": 3,
-    "high": 2,
+    "total": 2,
+    "high": 0,
     "medium": 0,
     "cc": 1
   }
