@@ -12,7 +12,8 @@
     "poc-d4": "node scripts/auth-poc-d4.mjs",
     "poc-d5": "node scripts/auth-poc-d5.mjs",
     "fetch": "node scripts/fetch-mentions.mjs",
-    "digest": "node scripts/generate-digest.mjs"
+    "digest": "node scripts/generate-digest.mjs",
+    "reencrypt-data": "node scripts/encrypt-existing.mjs"
   },
   "dependencies": {
     "playwright": "^1.49.0"

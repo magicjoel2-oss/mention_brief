@@ -1,28 +1,6 @@
 {
-  "date": "2026-06-16",
-  "generatedAt": "2026-06-16T11:20:26+09:00",
-  "windowFrom": "2026-06-15T11:20:26+09:00",
-  "windowTo": "2026-06-16T11:20:26+09:00",
-  "items": [
-    {
-      "id": "20260616-01",
-      "time": "2026-06-12 14:01",
-      "chat": "환영열쇠 Cuid방",
-      "author": "신효선 [aweseon]",
-      "priority": "low",
-      "isCC": true,
-      "original": "모든 사용자\n\r\n\n[🚨] SNF 라이브 - 이슈 제보 및 대응\n\r\n\nSNF 기간 기급 이슈를 포함한 이슈 대응 채널이 생성되었습니다. \n\r\n\n로테이션 근무표 참고해서 기획, 클라, 서버, 사업, 프로덕션 태그도 생성해 두었으니 급하게 멘션 필요하신 경우 사용해주시면 될것 같습니다.\n\r\n\n00:00~ 08:00 근무 인원분들 위주로 먼저 넣어두었는데, 근무 담당자 바뀌는 시점에 맞춰서 변경해 둘 예정입니다.",
-      "summary": "모든 사용자 [🚨] SNF 라이브 - 이슈 제보 및 대응 SNF 기간 기급 이슈를 포함한 이슈 대응 채널이…",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781240463246",
-      "chatId": "19:270b110c7984434a827bcde8666928aa@thread.v2"
-    }
-  ],
-  "stats": {
-    "total": 1,
-    "high": 0,
-    "medium": 0,
-    "cc": 1
-  }
+  "v": 1,
+  "enc": "AES-256-GCM",
+  "iv": "RONW5CjAu4reAQVA",
+  "ct": "Za7MoxlRvtg8vABE8RBTmAMXoNRgfmci9NrrjJdvXo6bAyRLHPfQ0RXhw7L0QLDi7Ga7qCioSULNXe6W/3THeB4KeR7AuXs135Cryq7o5TX1RvzUp3klRWx49ohV2zjEB5cmqTvy1WFzSTMMleceaI3aW+gFyg1zlTz7SrXoRfemOYgP1UXHrAlE6CLe1WynNcJzaSk6P40l3gBD5vFXf3jyRwpfICuzfV27a23OqK/bjHBBzIbd5TOEqbGUuV89XOOPNroNV7S3P8yciBliRr4c8EPMnTvFcQBZT73H7DkBy3HS9CvEdjXz+rdFi+PwM+94eUXDioK4DT6TKsA/QHkwGXXIRYW0+aGa7hv3hVPKH3mOxjtBiiKYAq5X0gDqiQOZciVeMd2WyCr69KuNx2wUAdBtM8qsHKXEIvczht/mDMPkDuZdycoZAuDqwCb8Nr/xGMZ8du6yS3+7hRnP58ein4fXPlpu+a0vtgT0ZXTQT2gb8TL9W3I1Qu4DftN2AvjgtvOF4E2S1sgiya2t1eBRAe6PrUNl/rI08QJ+EbYmouACE+UnQUV7mQDlgE8dqgvuLrUsQOIyOfpuYZfpA8JrL8kIMz5V6vVOM5Zc07JpOfwU7LBy2FpP+DiuLy85w/DVMgj071maH43n15RDW1LMiL1ohwdKV4dfIyeC2oDMu4tQlHakV4kiyNIgT1hjOcCSm3Oy8Nsh16USXNg1KdYjj0Z6x1t54j5TPBAhavsGbjferaLns7DIXeYe4DdXmwtDtzI9YlsG2umEVSP48NU+gljAs/wJM+uZCgj/ptRxcG6Z7YE62ZsKwVKr6oRPHDFD44XEtzWSY6Km38KeEPylNSOFa7cTD9/i1OOTAmJGuzG4lcoKGF2NUDeXTs4QCOKmlktAoywHFYDX5wsDvhIgNzemWB/+SMMnctuUP/QEwlvB5C6TAeh/c6Dng2KMz1ZZUp+vdr4pjnz/iEdj0i77pLBSAf3eX5agxcgo6RbhXzDZraC7/jZvOpK9GOM1+Eg76W0XDTqLn8mJe+LsvCf+hzBX17xEuD9rBsKZi7UFDW6eyFkRKkwZaURUnm/UBJ+3uY2PhgwT+NKNjjS0/uV1zl5UxKylP2z0BfLQFOkpvNM/5nmofcdqYEv5mwG5cAG/NMBfaSAFcsOiFhA5/XxzJxSs8A28gicj93S8WfbsCmk/QLl5TomUsBGP57invGpp1qzQ9azjXq2whPrcoodsWrabLLs2qHqP3ppO6vvLFvSoa2zrZMdq20jhisDIK19zd5qWMb/izkYCboBQmPl752GPDWxU6UlPwIGFo81bJ4EGNjyiAerFdyEqvP/7nBnMIWnaa8asBYpMrkAsfXwhFG5twPDWnL2b4l8tMvZtD4O4Bxb0QraH80v5ZWjwFYlh0F/cRuKv9EIHiII2Fn7q/FSibFPq2Qgobah3azBGwY8cA42WVjx6gnIWXAqdOHXC4ACDx792ao2i6M4pAm0B3ncWyLXdy8UR7GlY/oml"
 }

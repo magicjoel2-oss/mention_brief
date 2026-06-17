@@ -30,6 +30,8 @@ import { chromium } from "playwright";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import fs from "node:fs/promises";
+import fsSync from "node:fs";
+import crypto from "node:crypto";
 import { execSync } from "node:child_process";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -37,10 +39,32 @@ const rootDir = path.resolve(__dirname, "..");
 const profileDir = path.join(rootDir, ".browser-profile");
 const dataDir = path.join(rootDir, "data");
 
+// Load .env without an extra dependency.
+function loadDotenv() {
+  try {
+    const text = fsSync.readFileSync(path.join(rootDir, ".env"), "utf8");
+    for (const line of text.split(/\r?\n/)) {
+      const m = line.match(/^([A-Z0-9_]+)\s*=\s*(.*)$/);
+      if (!m) continue;
+      const key = m[1];
+      let val = m[2].trim();
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      if (!(key in process.env)) process.env[key] = val;
+    }
+  } catch {}
+}
+loadDotenv();
+
 const MY_ID = "2185dfaa-243b-4541-ba33-1f223e81ccf9";
 const MY_MRI = `8:orgid:${MY_ID}`;
 const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-6";
 const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY || null;
+
+const GATE_QUESTION = process.env.MENTION_BRIEF_QUESTION || null;
+const GATE_ANSWER = process.env.MENTION_BRIEF_ANSWER || null;
+const PBKDF2_ITER = 200000;
 
 const args = parseArgv(process.argv.slice(2));
 
@@ -123,6 +147,53 @@ function authoredByMe(m) {
   return typeof m.from === "string" && m.from.includes(MY_ID);
 }
 
+// ---- gate / encryption helpers ----------------------------------------------
+async function ensureGateConfig() {
+  // Make sure data/_config.json exists with the current question + a salt.
+  // If the question changes between runs, salt is regenerated (which forces
+  // a full re-encrypt — caller's responsibility to run encrypt-existing).
+  const configPath = path.join(dataDir, "_config.json");
+  let cfg = null;
+  try {
+    cfg = JSON.parse(await fs.readFile(configPath, "utf8"));
+  } catch {}
+  if (!cfg || cfg.question !== GATE_QUESTION) {
+    cfg = {
+      v: 1,
+      question: GATE_QUESTION,
+      salt: crypto.randomBytes(16).toString("base64"),
+      kdf: "PBKDF2-SHA256",
+      iterations: PBKDF2_ITER,
+    };
+    await fs.writeFile(configPath, JSON.stringify(cfg, null, 2), "utf8");
+    console.log(`Wrote new gate config: ${configPath}`);
+  }
+  return cfg;
+}
+
+function deriveKey(answer, saltB64) {
+  const salt = Buffer.from(saltB64, "base64");
+  return crypto.pbkdf2Sync(answer, salt, PBKDF2_ITER, 32, "sha256");
+}
+
+function encryptPayload(obj, key) {
+  // AES-256-GCM. Output shape is interoperable with Web Crypto's
+  // subtle.decrypt({name:"AES-GCM"}, ...) which expects ciphertext||tag.
+  const iv = crypto.randomBytes(12);
+  const cipher = crypto.createCipheriv("aes-256-gcm", key, iv);
+  const ct = Buffer.concat([
+    cipher.update(JSON.stringify(obj), "utf8"),
+    cipher.final(),
+  ]);
+  const tag = cipher.getAuthTag();
+  return {
+    v: 1,
+    enc: "AES-256-GCM",
+    iv: iv.toString("base64"),
+    ct: Buffer.concat([ct, tag]).toString("base64"),
+  };
+}
+
 // ---- heuristic fallback (used when no Anthropic key) ------------------------
 function heuristicSummary(item) {
   const text = String(item.original || "").replace(/\s+/g, " ").trim();
@@ -132,11 +203,31 @@ function heuristicSummary(item) {
 
 function heuristicPriority(item) {
   if (item.isCC) return "low";
-  const text = String(item.original || "");
-  if (/(곱창|식사|퇴근|커피|점심|저녁|회식|소주|간식)/.test(text)) return "casual";
-  if (/(\?|부탁|회신|되나요|되는거에여|되는건가|되는지|가능한가|가능할까|어떠심|어떠세요|어떻게|드릴까요|드릴지|되나|확인 부탁)/.test(text)) return "high";
-  if (/(검토|리뷰|수정|점검|체크|확인해)/.test(text)) return "medium";
-  if (/(공유드립|공유드려|공유합|공유 드립|완료|배포|보고|드립니다|올렸|올려|업로드)/.test(text)) return "info";
+  const text = String(item.original || "").trim();
+  const len = text.length;
+
+  // 1. casual: 자모 약자(ㄱ?/ㄴㄴ) 또는 짧은 친밀 표현
+  if (
+    /[ㄱ-ㅎ]{1,3}\??$/.test(text) ||
+    /(곱창|회식|치맥|이른 ?퇴근|커피 ?ㄱ|간식 ?ㄱ|소주)/.test(text) ||
+    (len <= 15 && /(밥|점심|저녁|식사|커피|간식)\s?[ㄱ-ㅎ]?\??/.test(text))
+  ) return "casual";
+
+  // 2. high: 명시적 요청·지시 동사 (가장 강한 신호)
+  if (/(주세요|주실|해주[세시]|부탁드[리립]|회신|답변 부탁|확인 부탁|확인해 ?주|언제까지|마감|챙겨 ?주|챙겨주|봐 ?주[세시])/.test(text)) return "high";
+
+  // 3. medium: 검토·리뷰
+  if (/(검토|리뷰|수정|점검|체크|살펴|판단|보시고)/.test(text)) return "medium";
+
+  // 4. info: 정보 공유·완료 통보 (동사 어미만 매칭, "보고" 같은 단독 명사 제외)
+  if (/(공유드립|공유드려|공유합|드립니다|드려요|완료했|완료입|완료되|배포 완료|올렸|올려두|업로드)/.test(text)) return "info";
+
+  // 5. 그 외 ? 포함: 짧으면 medium, 길면 high
+  if (/\?/.test(text)) {
+    return len < 30 ? "medium" : "high";
+  }
+
+  // 6. 디폴트: 분류 신호 없음 → medium 안전
   return "medium";
 }
 
@@ -385,10 +476,18 @@ async function main() {
     return;
   }
 
-  // write data/YYYY-MM-DD.json
+  // write data/YYYY-MM-DD.json (encrypted with gate answer if configured)
   const outPath = path.join(dataDir, `${targetDate}.json`);
-  await fs.writeFile(outPath, JSON.stringify(digest, null, 2), "utf8");
-  console.log(`Wrote ${outPath}`);
+  if (GATE_QUESTION && GATE_ANSWER) {
+    const cfg = await ensureGateConfig();
+    const key = deriveKey(GATE_ANSWER, cfg.salt);
+    const payload = encryptPayload(digest, key);
+    await fs.writeFile(outPath, JSON.stringify(payload, null, 2), "utf8");
+    console.log(`Wrote ${outPath} (encrypted)`);
+  } else {
+    await fs.writeFile(outPath, JSON.stringify(digest, null, 2), "utf8");
+    console.log(`Wrote ${outPath} (plaintext — gate not configured)`);
+  }
 
   // update data/index.json
   const idxPath = path.join(dataDir, "index.json");

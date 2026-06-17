@@ -1,42 +1,6 @@
 {
-  "date": "2026-06-17",
-  "generatedAt": "2026-06-17T14:45:05+09:00",
-  "windowFrom": "2026-06-16T14:45:05+09:00",
-  "windowTo": "2026-06-17T14:45:05+09:00",
-  "items": [
-    {
-      "id": "20260617-01",
-      "time": "2026-06-17 13:09",
-      "chat": "기획 협업방",
-      "author": "임효상 [wizd]",
-      "priority": "low",
-      "isCC": true,
-      "original": "모든 사용자 동향 분석은 사업에서 하고 있으니 리소스 추가 투입하지말고, 게임디자인실은 원래 하던 NP 기획이랑, 지금 나오는 피드백들 기반으로 개선점 정리하는 액션에 집중해주세요.\n\r\n\n손희영 [sonny0] 은주님은 위에 병재님 호현님이 정리하신거처럼 레딧이랑, 유튜브 리뷰 영상 내용과 댓글 등 정리는 추가적으로 요청해서 해주세요. 단 문서가 요일별로 나눠져있으면 좀 보기가 힘들어서 통합본으로 나오는게 좋겠습니다.",
-      "summary": "모든 사용자 동향 분석은 사업에서 하고 있으니 리소스 추가 투입하지말고, 게임디자인실은 원래 하던 NP 기획…",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781669389556",
-      "chatId": "19:3c39d6b96b2d4344972f6cd599489095@thread.v2"
-    },
-    {
-      "id": "20260617-02",
-      "time": "2026-06-16 18:19",
-      "chat": "왕조의 무덤 협의방",
-      "author": "정우식 [gameseeke]",
-      "priority": "casual",
-      "isCC": false,
-      "original": "이민우3 [magicjoel] 밥 ㄱ?",
-      "summary": "이민우3 [magicjoel] 밥 ㄱ?",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781601566115",
-      "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
-    }
-  ],
-  "stats": {
-    "total": 2,
-    "high": 0,
-    "medium": 0,
-    "cc": 1
-  }
+  "v": 1,
+  "enc": "AES-256-GCM",
+  "iv": "ByeZJzLzAqX2FhsX",
+  "ct": "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"
 }

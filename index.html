@@ -269,9 +269,72 @@
     background: #FEF2F2; border: 1px solid var(--red); color: #991B1B;
     padding: 12px 14px; border-radius: 4px; margin-bottom: 20px; font-size: 13px;
   }
+  .stale-banner {
+    background: #FFFBEB; border: 1px solid #F59E0B; color: #92400E;
+    padding: 12px 14px; border-radius: 4px; margin-bottom: 20px;
+    font-size: 13px; display: flex; align-items: center; gap: 10px;
+  }
+  .stale-banner::before { content: "⚠"; font-size: 16px; flex-shrink: 0; }
+
+  /* Gate */
+  .gate {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(250, 250, 249, 0.7);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gate-modal {
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: 6px; padding: 28px 28px 24px;
+    width: 92%; max-width: 420px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+  .gate-title {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px;
+    color: var(--teal); text-transform: uppercase; font-weight: 600;
+    margin: 0 0 12px;
+  }
+  .gate-question {
+    font-size: 16px; font-weight: 700; line-height: 1.45;
+    margin: 0 0 18px; color: var(--ink);
+  }
+  .gate-input {
+    width: 100%; padding: 10px 12px; border: 1px solid var(--line);
+    border-radius: 4px; font-size: 14px; font-family: var(--font-body);
+    margin-bottom: 10px; box-sizing: border-box;
+  }
+  .gate-input:focus { outline: 2px solid var(--teal); outline-offset: -1px; border-color: var(--teal); }
+  .gate-remember {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--sub); cursor: pointer;
+    margin-bottom: 14px; user-select: none;
+  }
+  .gate-remember input { accent-color: var(--teal); width: 14px; height: 14px; }
+  .gate-submit {
+    width: 100%; padding: 10px; border: none; border-radius: 4px;
+    background: var(--teal); color: white; font-weight: 600; font-size: 14px;
+    cursor: pointer; font-family: var(--font-body);
+  }
+  .gate-submit:disabled { opacity: 0.5; cursor: wait; }
+  .gate-error {
+    margin-top: 10px; font-size: 12px; color: var(--red); min-height: 14px;
+  }
 </style>
 </head>
 <body>
+<div id="gate" class="gate" style="display:none">
+  <div class="gate-modal">
+    <div class="gate-title">접근 확인</div>
+    <p id="gate-question" class="gate-question">로딩 중…</p>
+    <input id="gate-input" class="gate-input" type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" />
+    <label class="gate-remember">
+      <input id="gate-remember-cb" type="checkbox" checked />
+      이 브라우저에 저장
+    </label>
+    <button id="gate-submit" class="gate-submit">확인</button>
+    <div id="gate-error" class="gate-error"></div>
+  </div>
+</div>
 <div id="app" class="loading">loading…</div>
 
 <script>
@@ -330,17 +393,154 @@ async function fetchJSON(path) {
   return await res.json();
 }
 
+// ---- Gate / decryption ------------------------------------------------------
+const GATE_STORAGE = "mention-brief:gate-answer";
+
+function b64ToBytes(b64) {
+  const bin = atob(b64);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+
+async function deriveGateKey(answer, saltB64, iterations) {
+  const baseKey = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(answer),
+    "PBKDF2",
+    false,
+    ["deriveKey"]
+  );
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: b64ToBytes(saltB64), iterations, hash: "SHA-256" },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    false,
+    ["decrypt"]
+  );
+}
+
+async function decryptPayload(payload, key) {
+  // Node's crypto.createCipheriv produces ciphertext||tag (last 16 bytes).
+  // Web Crypto AES-GCM expects the same shape, so just pass it through.
+  const iv = b64ToBytes(payload.iv);
+  const ct = b64ToBytes(payload.ct);
+  const pt = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ct);
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+async function loadDailyDecrypted(date) {
+  const raw = await fetchJSON(`./data/${date}.json`);
+  if (raw && raw.enc === "AES-256-GCM" && state.gateKey) {
+    return decryptPayload(raw, state.gateKey);
+  }
+  return raw; // plaintext fallback (pre-gate seed data)
+}
+
+async function tryUnlock(answer) {
+  if (!state.gateConfig || !state.manifest) return false;
+  const key = await deriveGateKey(answer, state.gateConfig.salt, state.gateConfig.iterations);
+  // Test by decrypting the newest daily. If manifest has no dates, accept the
+  // answer optimistically (first run, nothing to test against).
+  const dates = state.manifest.dates || [];
+  if (dates.length === 0) {
+    state.gateKey = key;
+    return true;
+  }
+  const probeDate = dates[0].date;
+  const raw = await fetchJSON(`./data/${probeDate}.json`);
+  if (!raw || raw.enc !== "AES-256-GCM") {
+    // plaintext (pre-gate). Accept and move on.
+    state.gateKey = key;
+    return true;
+  }
+  try {
+    await decryptPayload(raw, key);
+    state.gateKey = key;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function showGate(question) {
+  const gate = document.getElementById("gate");
+  document.getElementById("gate-question").textContent = question;
+  document.getElementById("gate-error").textContent = "";
+  gate.style.display = "flex";
+  setTimeout(() => document.getElementById("gate-input").focus(), 0);
+}
+
+function hideGate() {
+  document.getElementById("gate").style.display = "none";
+}
+
+async function handleGateSubmit() {
+  const input = document.getElementById("gate-input");
+  const btn = document.getElementById("gate-submit");
+  const err = document.getElementById("gate-error");
+  const remember = document.getElementById("gate-remember-cb").checked;
+  const answer = input.value;
+  if (!answer) return;
+  btn.disabled = true;
+  err.textContent = "확인 중…";
+  try {
+    const ok = await tryUnlock(answer);
+    if (!ok) {
+      err.textContent = "답이 일치하지 않습니다.";
+      btn.disabled = false;
+      input.select();
+      return;
+    }
+    if (remember) {
+      try { localStorage.setItem(GATE_STORAGE, answer); } catch {}
+    } else {
+      try { localStorage.removeItem(GATE_STORAGE); } catch {}
+    }
+    hideGate();
+    await loadDateAndPrev();
+    render();
+  } catch (e) {
+    err.textContent = "오류: " + e.message;
+    btn.disabled = false;
+  }
+}
+
 async function init() {
   state.checks = loadChecks();
   try {
-    state.manifest = await fetchJSON("./data/index.json");
+    // load config + manifest in parallel (both are plaintext)
+    const [cfg, manifest] = await Promise.all([
+      fetchJSON("./data/_config.json").catch(() => null),
+      fetchJSON("./data/index.json"),
+    ]);
+    state.manifest = manifest;
+    state.dateIdx = 0;
+
     if (!state.manifest.dates || state.manifest.dates.length === 0) {
-      renderError("아직 디지스트 데이터가 없습니다. Power Automate가 첫 실행 후 다시 방문하세요.");
+      renderError("아직 디지스트 데이터가 없습니다. 자동화 첫 실행 후 다시 방문하세요.");
       return;
     }
-    // dates는 최신순 가정 (index.json에서 정렬해서 옴)
-    state.dateIdx = 0; // 최신
-    // 현재 + 이전 디지스트들 함께 로드 (overdue 계산에 필요)
+
+    if (cfg && cfg.question) {
+      // Gate active. Try the cached answer first; otherwise show the modal.
+      state.gateConfig = cfg;
+      const cached = (() => { try { return localStorage.getItem(GATE_STORAGE); } catch { return null; } })();
+      if (cached && await tryUnlock(cached)) {
+        await loadDateAndPrev();
+        render();
+        return;
+      }
+      // bind handlers once
+      document.getElementById("gate-submit").addEventListener("click", handleGateSubmit);
+      document.getElementById("gate-input").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") handleGateSubmit();
+      });
+      showGate(cfg.question);
+      return;
+    }
+
+    // No gate configured: legacy plaintext flow.
     await loadDateAndPrev();
     render();
   } catch (e) {
@@ -353,7 +553,7 @@ async function loadDateAndPrev() {
   const promises = state.manifest.dates.map(async (d) => {
     if (!state.digests[d.date]) {
       try {
-        state.digests[d.date] = await fetchJSON(`./data/${d.date}.json`);
+        state.digests[d.date] = await loadDailyDecrypted(d.date);
       } catch (e) {
         console.warn(`Failed to load ${d.date}:`, e);
         state.digests[d.date] = { date: d.date, items: [] };
@@ -456,6 +656,20 @@ function priorityBadge(priority) {
 }
 
 function ccBadge() { return `<span class="cc-badge">cc</span>`; }
+
+function isStale() {
+  // 자동화가 매일 09:00 KST에 도는데 오늘 디지스트가 아직 없으면 stale로 감지.
+  // 단 09:30 KST 이전이면 아직 자동화 안 돈 정상 상황이라 배너 안 띄움 (false alarm 방지).
+  if (!state.manifest?.dates?.length) return false;
+  const latest = state.manifest.dates[0].date;
+  const kstNow = new Date(Date.now() + 9 * 3600 * 1000);
+  const todayKst = kstNow.toISOString().slice(0, 10);
+  if (latest === todayKst) return false;
+  const kstHour = kstNow.getUTCHours();
+  const kstMin = kstNow.getUTCMinutes();
+  if (kstHour < 9 || (kstHour === 9 && kstMin < 30)) return false;
+  return true;
+}
 
 function renderError(msg) {
   document.getElementById("app").outerHTML = `
@@ -600,8 +814,13 @@ function render() {
         : ""}
     </section>`;
 
+  const staleBanner = isStale()
+    ? `<div class="stale-banner">자동화가 오늘 돌지 않은 것 같습니다. 마지막 갱신: ${escapeHtml(state.manifest.dates[0].date)} · <code>logs/digest-${escapeHtml(new Date(Date.now() + 9*3600*1000).toISOString().slice(0,10))}.log</code> 확인 권장</div>`
+    : "";
+
   const html = `
     <div class="container">
+      ${staleBanner}
       <header>
         <div class="head-meta">
           <div class="head-title">Mention Brief — magicjoel</div>
