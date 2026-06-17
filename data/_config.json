@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "question": "내가 처음 산 키보드 모델명은? (예시 — 본인 답에 맞춰 교체)",
+  "question": "중요한 비밀번호",
   "salt": "l5uyn/eEgdOL5gXhXSGH7A==",
   "kdf": "PBKDF2-SHA256",
   "iterations": 200000

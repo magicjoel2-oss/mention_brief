@@ -82,7 +82,7 @@ function tryDecrypt(payload, key) {
 const configPath = path.join(dataDir, "_config.json");
 let cfg = null;
 try { cfg = JSON.parse(await fs.readFile(configPath, "utf8")); } catch {}
-if (!cfg || cfg.question !== QUESTION) {
+if (!cfg) {
   cfg = {
     v: 1,
     question: QUESTION,
@@ -91,9 +91,14 @@ if (!cfg || cfg.question !== QUESTION) {
     iterations: PBKDF2_ITER,
   };
   await fs.writeFile(configPath, JSON.stringify(cfg, null, 2), "utf8");
-  console.log(`Wrote ${configPath}`);
+  console.log(`Wrote new ${configPath}`);
+} else if (cfg.question !== QUESTION) {
+  // 질문만 갱신, salt 유지 — 기존 답으로 암호화된 데이터 호환을 위해
+  cfg.question = QUESTION;
+  await fs.writeFile(configPath, JSON.stringify(cfg, null, 2), "utf8");
+  console.log(`Updated question in ${configPath} (salt preserved).`);
 } else {
-  console.log(`Using existing config (salt unchanged).`);
+  console.log(`Using existing config (unchanged).`);
 }
 
 const newKey = deriveKey(ANSWER, cfg.salt);

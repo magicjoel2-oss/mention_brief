@@ -157,7 +157,7 @@ async function ensureGateConfig() {
   try {
     cfg = JSON.parse(await fs.readFile(configPath, "utf8"));
   } catch {}
-  if (!cfg || cfg.question !== GATE_QUESTION) {
+  if (!cfg) {
     cfg = {
       v: 1,
       question: GATE_QUESTION,
@@ -167,6 +167,11 @@ async function ensureGateConfig() {
     };
     await fs.writeFile(configPath, JSON.stringify(cfg, null, 2), "utf8");
     console.log(`Wrote new gate config: ${configPath}`);
+  } else if (cfg.question !== GATE_QUESTION) {
+    // 질문만 갱신, salt는 유지 (기존 암호문 호환 위해)
+    cfg.question = GATE_QUESTION;
+    await fs.writeFile(configPath, JSON.stringify(cfg, null, 2), "utf8");
+    console.log(`Updated gate question (salt preserved).`);
   }
   return cfg;
 }
