@@ -1,11 +1,25 @@
 {
   "date": "2026-06-17",
-  "generatedAt": "2026-06-17T10:09:46+09:00",
-  "windowFrom": "2026-06-16T10:09:46+09:00",
-  "windowTo": "2026-06-17T10:09:46+09:00",
+  "generatedAt": "2026-06-17T14:33:17+09:00",
+  "windowFrom": "2026-06-16T14:33:17+09:00",
+  "windowTo": "2026-06-17T14:33:17+09:00",
   "items": [
     {
       "id": "20260617-01",
+      "time": "2026-06-17 13:09",
+      "chat": "기획 협업방",
+      "author": "임효상 [wizd]",
+      "priority": "low",
+      "isCC": true,
+      "original": "모든 사용자 동향 분석은 사업에서 하고 있으니 리소스 추가 투입하지말고, 게임디자인실은 원래 하던 NP 기획이랑, 지금 나오는 피드백들 기반으로 개선점 정리하는 액션에 집중해주세요.\n\r\n\n손희영 [sonny0] 은주님은 위에 병재님 호현님이 정리하신거처럼 레딧이랑, 유튜브 리뷰 영상 내용과 댓글 등 정리는 추가적으로 요청해서 해주세요. 단 문서가 요일별로 나눠져있으면 좀 보기가 힘들어서 통합본으로 나오는게 좋겠습니다.",
+      "summary": "모든 사용자 동향 분석은 사업에서 하고 있으니 리소스 추가 투입하지말고, 게임디자인실은 원래 하던 NP 기획…",
+      "recommend": "",
+      "links": [],
+      "messageId": "1781669389556",
+      "chatId": "19:3c39d6b96b2d4344972f6cd599489095@thread.v2"
+    },
+    {
+      "id": "20260617-02",
       "time": "2026-06-16 18:19",
       "chat": "왕조의 무덤 협의방",
       "author": "정우식 [gameseeke]",
@@ -19,7 +33,7 @@
       "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
     },
     {
-      "id": "20260617-02",
+      "id": "20260617-03",
       "time": "2026-06-16 14:35",
       "chat": "왕조의 무덤 협의방",
       "author": "정우식 [gameseeke]",
@@ -31,87 +45,12 @@
       "links": [],
       "messageId": "1781588123794",
       "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
-    },
-    {
-      "id": "20260617-03",
-      "time": "2026-06-16 14:15",
-      "chat": "기획 협업방",
-      "author": "임효상 [wizd]",
-      "priority": "info",
-      "isCC": false,
-      "original": "정우식 [gameseeke] 이민우3 [magicjoel] 제전 안들어간거 사건사고보고서 써주세요",
-      "summary": "정우식 [gameseeke] 이민우3 [magicjoel] 제전 안들어간거 사건사고보고서 써주세요",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781586951622",
-      "chatId": "19:3c39d6b96b2d4344972f6cd599489095@thread.v2"
-    },
-    {
-      "id": "20260617-04",
-      "time": "2026-06-16 12:07",
-      "chat": "보상 협의방",
-      "author": "김상훈2 [tinarusef]",
-      "priority": "medium",
-      "isCC": false,
-      "original": "이민우3 [magicjoel]근데 저거 그 ... 몬스터 킬 업적 저거",
-      "summary": "이민우3 [magicjoel]근데 저거 그 ... 몬스터 킬 업적 저거",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781579263898",
-      "chatId": "19:e6a77d01c70f43789798103ea9eb08da@thread.v2"
-    },
-    {
-      "id": "20260617-05",
-      "time": "2026-06-16 11:51",
-      "chat": "왕조의 무덤 협의방",
-      "author": "정우식 [gameseeke]",
-      "priority": "medium",
-      "isCC": false,
-      "original": "이민우3 [magicjoel] 제전은 머선일인가요",
-      "summary": "이민우3 [magicjoel] 제전은 머선일인가요",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781578316995",
-      "chatId": "19:0cb6e8dafbc4423e982aa199a1c1c057@thread.v2"
-    },
-    {
-      "id": "20260617-06",
-      "time": "2026-06-16 11:50",
-      "chat": "가문 시스템 / 팀 그룹",
-      "author": "김찬래 [crkim]",
-      "priority": "high",
-      "isCC": false,
-      "original": "[NP] 포토 모드 세부 기획 - ER - NK Confluence\n\r\n\n이민우3 [magicjoel] \n\r\n\n민우님, NP 포토 모드 내용 추가해서 기획서 복붙했는데요.\n\r\n\n(화면 중앙 크로스 헤어 삭제 / 포즈 단축키 추가)\n\r\n\n이대로 컨펌 없이 기획 공유하면 되는걸까요?",
-      "summary": "[NP] 포토 모드 세부 기획 - ER - NK Confluence 이민우3 [magicjoel] 민우님,…",
-      "recommend": "",
-      "links": [
-        {
-          "label": "[NP] 포토 모드 세부 기획 - ER - NK Confluence",
-          "url": "https://confluence.nexon.com/spaces/NGR/pages/2924652429/NP+%ED%8F%AC%ED%86%A0+%EB%AA%A8%EB%93%9C+%EC%84%B8%EB%B6%80+%EA%B8%B0%ED%9A%8D"
-        }
-      ],
-      "messageId": "1781578212425",
-      "chatId": "19:4c04c8d4a9a2406aa26046a337bffd97@thread.v2"
-    },
-    {
-      "id": "20260617-07",
-      "time": "2026-06-16 11:39",
-      "chat": "기획 협업방",
-      "author": "임효상 [wizd]",
-      "priority": "low",
-      "isCC": true,
-      "original": "모든 사용자 지금 라이브 이슈로 들어와서\n\r\n\n[🚨] SNF 라이브 - 이슈 제보 및 대응\n\r\n\n제보되는 것들 원인이랑 수정방안 등 각 스레드에 정리해서 기재해주세요.",
-      "summary": "모든 사용자 지금 라이브 이슈로 들어와서 [🚨] SNF 라이브 - 이슈 제보 및 대응 제보되는 것들 원인이…",
-      "recommend": "",
-      "links": [],
-      "messageId": "1781577560120",
-      "chatId": "19:3c39d6b96b2d4344972f6cd599489095@thread.v2"
     }
   ],
   "stats": {
-    "total": 7,
-    "high": 3,
-    "medium": 2,
+    "total": 3,
+    "high": 2,
+    "medium": 0,
     "cc": 1
   }
 }
