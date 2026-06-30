@@ -1,8 +1,15 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-06-29T10:13:52+09:00",
+  "lastUpdated": "2026-06-30T10:13:25+09:00",
   "retentionDays": 14,
   "dates": [
+    {
+      "date": "2026-06-30",
+      "itemCount": 7,
+      "highCount": 0,
+      "mediumCount": 5,
+      "ccCount": 2
+    },
     {
       "date": "2026-06-29",
       "itemCount": 1,
